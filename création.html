@@ -3,63 +3,45 @@
 
 <head>
     <title>Inscription - Gohunt</title>
-
-    <style>
-        h1 {
-            color: green;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="creation.css">
 </head>
 
-<body style="background-image: url('images/fond.jpg');">
+<body>
 
     <h1>GOHUNT</h1>
 
-    <h2>Créer un compte</h2>
+    <div class="creation">
 
-    <h4 style="font-family: 'Courier';">
-        Prénom
-    </h4>
-    <input type="text" placeholder="Votre prénom">
+        <h2> Créer un compte</h2>
 
-    <h4 style="font-family: 'Courier';">
-        Nom
-    </h4>
-    <input type="text" placeholder="Votre nom">
+        <h4 style="font-family: 'Courier';"> Prénom</h4>
+            <input type="text" placeholder="Votre prénom">
 
-    <h4 style="font-family: 'Courier';">
-        Adresse courriel
-    </h4>
-    <input type="email" placeholder="Votre adresse courriel">
+        <h4 style="font-family: 'Courier';">Nom</h4>
+           <input type="text" placeholder="Votre nom">
 
-    <h4 style="font-family: 'Courier';">
-        Nom d'utilisateur
-    </h4>
-    <input type="text" placeholder="Choisissez un nom d'utilisateur">
+        <h4 style="font-family: 'Courier';">Adresse courriel</h4>
+           <input type="email" placeholder="Votre adresse courriel">
 
-    <h4 style="font-family: 'Courier';">
-        Mot de passe
-    </h4>
-    <input type="password" placeholder="Choisissez un mot de passe">
+        <h4 style="font-family: 'Courier';">Nom d'utilisateur</h4>
+           <input type="text" placeholder="Choisissez un nom d'utilisateur">
 
-    <h4 style="font-family: 'Courier';">
-        Confirmer le mot de passe
-    </h4>
-    <input type="password" placeholder="Confirmez votre mot de passe">
+        <h4 style="font-family: 'Courier';">Mot de passe</h4>
+            <input type="password" placeholder="Choisissez un mot de passe">
 
-    <br><br>
+        <h4 style="font-family: 'Courier';">Confirmer le mot de passe</h4>
+            <input type="password" placeholder="Confirmez votre mot de passe">
+        <br>
 
-    <div style="text-align: center;">
-        <button onclick="document.location='connexion.html'">
-            Créer mon compte
-        </button>
+        <div style="text-align: center;">
+            <button onclick="document.location='connexion.html'">Créer mon compte</button>
+        </div>
+        <br>
+
+        Déjà un compte ?
+         <a href="connexion.html">Se connecter</a>
+
     </div>
-
-    <br><br>
-
-    Déjà un compte ?
-    <a href="connexion.html">Se connecter</a>
 
 </body>
 

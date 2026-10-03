@@ -1,0 +1,30 @@
+
+        /* PAGE */
+    body {
+         margin: 0;
+        font-family: Arial, sans-serif;
+        background-color:white;
+        background-image: url(foret.jpg);
+    }
+
+    h1 {
+        color: green;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    } 
+
+    .creation{
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .creation input{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
