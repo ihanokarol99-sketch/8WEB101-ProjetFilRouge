@@ -1,59 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <title>Informations - GOHUNT</title>
-    <link rel="stylesheet" href="commun.css">
+    <meta charset="UTF-8">
 
+    <title>Informations - GOHUNT</title>
+
+    <link rel="stylesheet" href="commun.css">
 </head>
 
 <body>
-    <div class="conteneur">  
+
+    <div class="conteneur">
 
         <h1>GOHUNT</h1>
 
         <h2>Parlez-nous un peu de vous !</h2>
 
-    <!-- QUESTION 1 -->
 
-        <h4 style="font-family: 'Courier';">Depuis combien d'années chassez-vous ?</h4>
+        <!-- QUESTION 1 -->
 
-<input type = "number"min="0" placeholder="Nombre d'années">
+        <h4 style="font-family: 'Courier';">
+            Depuis combien d'années chassez-vous ?
+        </h4>
 
-    <!-- QUESTION 2 -->
+        <input
+            type="number"
+            id="anneesExperience"
+            min="0"
+            placeholder="Nombre d'années"
+            required
+        >
 
-        <h4 style="font-family: 'Courier';">Que chassez-vous ?</h4>
 
-            <select>
-                <option value="">Choisissez</option>
-                <option value="gros">Gros gibier</option>
-                <option value="petit">Petit gibier</option>
-                <option value="les_deux">Les deux</option>
-            </select>
+        <!-- QUESTION 2 -->
 
-    <!-- QUESTION 3 -->
+        <h4 style="font-family: 'Courier';">
+            Que chassez-vous ?
+        </h4>
 
-        <h4 style="font-family: 'Courier';">Combien de gibiers avez-vous abattus ?</h4>
+        <select id="typeChasse" required>
 
-<input type="text" placeholder="Exemple : 12">
+            <option value="">Choisissez</option>
 
-    <!-- QUESTION 4 -->
+            <option value="gros">
+                Gros gibier
+            </option>
 
-        <h4 style="font-family: 'Courier';">Quelle est votre fréquence de chasse ?</h4>
+            <option value="petit">
+                Petit gibier
+            </option>
 
-            <select>
-                <option value="">Choisissez</option>
-                <option value="rarement">Rarement</option>
-                <option value="occasionnellement">Occasionnellement</option>
-                <option value="regulierement">Régulièrement</option>
-                <option value="tres_regulierement">Très régulièrement</option>
-            </select>
+            <option value="les_deux">
+                Les deux
+            </option>
 
-            <br><br>
+        </select>
 
-            <div style="text-align: center;">
-                <button onclick="document.location='connexion.html'">Continuer<button>
+
+        <!-- QUESTION 3 -->
+
+        <h4 style="font-family: 'Courier';">
+            Combien de gibiers avez-vous abattus ?
+        </h4>
+
+        <input
+            type="number"
+            id="nombreGibiers"
+            min="0"
+            placeholder="Exemple : 12"
+            required
+        >
+
+
+        <!-- QUESTION 4 -->
+
+        <h4 style="font-family: 'Courier';">
+            Quelle est votre fréquence de chasse ?
+        </h4>
+
+        <select id="frequenceChasse" required>
+
+            <option value="">Choisissez</option>
+
+            <option value="rarement">
+                Rarement
+            </option>
+
+            <option value="occasionnellement">
+                Occasionnellement
+            </option>
+
+            <option value="regulierement">
+                Régulièrement
+            </option>
+
+            <option value="tres_regulierement">
+                Très régulièrement
+            </option>
+
+        </select>
+
+
+        <br><br>
+
+
+        <!-- BOUTON CONTINUER -->
+
+        <div style="text-align: center;">
+
+            <button
+                type="button"
+                id="btnContinuer"
+                onclick="document.location='connexion.html'">
+                Continuer
+            </button>
+
         </div>
-    </div>    
+
+    </div>
+
 </body>
+
 </html>

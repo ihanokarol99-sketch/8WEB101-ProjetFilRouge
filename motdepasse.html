@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <title>Mot de passe oublié - GOHUNT</title>
-    <link rel="stylesheet" href="connexion.css">
+    <meta charset="UTF-8">
 
+    <title>Mot de passe oublié - GOHUNT</title>
+
+    <link rel="stylesheet" href="connexion.css">
 </head>
 
 <body>
@@ -15,22 +17,44 @@
 
         <h2>Mot de passe oublié ?</h2>
 
-        <p>Entrez votre adresse courriel pour réinitialiser votre mot de passe.</p>
+        <p>
+            Entrez votre adresse courriel pour
+            réinitialiser votre mot de passe.
+        </p>
 
-        <h4 style="font-family: 'Courier';">Adresse courriel</h4>
+        <h4 style="font-family: 'Courier';">
+            Adresse courriel
+        </h4>
 
-        <input type="email"
-        placeholder="Votre adresse courriel">
+        <input
+            type="email"
+            id="emailRecuperation"
+            placeholder="Votre adresse courriel"
+            required
+        >
 
         <br><br>
 
         <div style="text-align: center;">
-            <button>Continuer</button>
-        </div>
-   
-         <br><br>
 
-        <a href="connexion.html">Retour à la connexion</a>
+            <button
+                type="button"
+                id="btnRecuperation">
+                Continuer
+            </button>
+
+        </div>
+
+        <p id="messageRecuperation"></p>
+
+        <br><br>
+
+        <a href="connexion.html">
+            Retour à la connexion
+        </a>
+
     </div>
+
 </body>
+
 </html>

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
+    <meta charset="UTF-8">
+
     <title>Inscription - Gohunt</title>
+
     <link rel="stylesheet" href="creation.css">
 </head>
 
@@ -12,34 +15,93 @@
 
     <div class="creation">
 
-        <h2> Créer un compte</h2>
+        <h2>Créer un compte</h2>
 
-        <h4 style="font-family: 'Courier';"> Prénom</h4>
-            <input type="text" placeholder="Votre prénom">
+        <h4 style="font-family: 'Courier';">
+            Prénom
+        </h4>
 
-        <h4 style="font-family: 'Courier';">Nom</h4>
-           <input type="text" placeholder="Votre nom">
+        <input
+            type="text"
+            id="prenom"
+            placeholder="Votre prénom"
+            required
+        >
 
-        <h4 style="font-family: 'Courier';">Adresse courriel</h4>
-           <input type="email" placeholder="Votre adresse courriel">
+        <h4 style="font-family: 'Courier';">
+            Nom
+        </h4>
 
-        <h4 style="font-family: 'Courier';">Nom d'utilisateur</h4>
-           <input type="text" placeholder="Choisissez un nom d'utilisateur">
+        <input
+            type="text"
+            id="nom"
+            placeholder="Votre nom"
+            required
+        >
 
-        <h4 style="font-family: 'Courier';">Mot de passe</h4>
-            <input type="password" placeholder="Choisissez un mot de passe">
+        <h4 style="font-family: 'Courier';">
+            Adresse courriel
+        </h4>
 
-        <h4 style="font-family: 'Courier';">Confirmer le mot de passe</h4>
-            <input type="password" placeholder="Confirmez votre mot de passe">
-        <br>
+        <input
+            type="email"
+            id="email"
+            placeholder="Votre adresse courriel"
+            required
+        >
+
+        <h4 style="font-family: 'Courier';">
+            Nom d'utilisateur
+        </h4>
+
+        <input
+            type="text"
+            id="nomUtilisateur"
+            placeholder="Choisissez un nom d'utilisateur"
+            required
+        >
+
+        <h4 style="font-family: 'Courier';">
+            Mot de passe
+        </h4>
+
+        <input
+            type="password"
+            id="motdepasseInscription"
+            placeholder="Choisissez un mot de passe"
+            required
+        >
+
+        <h4 style="font-family: 'Courier';">
+            Confirmer le mot de passe
+        </h4>
+
+        <input
+            type="password"
+            id="confirmationMotdepasse"
+            placeholder="Confirmez le mot de passe"
+            required
+        >
+
+        <br><br>
 
         <div style="text-align: center;">
-            <button onclick="document.location='connexion.html'">Créer mon compte</button>
-        </div>
-        <br>
 
-        Déjà un compte ?
-         <a href="connexion.html">Se connecter</a>
+    <button
+        type="button"
+        id="btnInscription"
+        onclick="document.location='information.html'">
+        Inscription
+    </button>
+
+</div>
+
+        <br><br>
+
+        <p>
+            Déjà un compte ?
+            <a href="connexion.html">Se connecter</a>
+        </p>
 
     </div>
 
