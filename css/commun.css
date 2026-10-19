@@ -2,7 +2,7 @@
 
 /* Image en arrière-plan de la page entière */
 body {
-  background-image: url("nature.jpg");
+  background-image: url("../images/nature.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

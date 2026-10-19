@@ -3,9 +3,10 @@
 
 <head>
     <title>Inscription - Gohunt</title>
-    <link rel="stylesheet" href="commun.css">
+    <link rel="stylesheet" href="../css/commun.css">
 </head>
 
+<script src="../js/inscription.js" defer></script>
 <body>
     <div class="conteneur">
 
@@ -14,27 +15,27 @@
         <h2>Inscription</h2>
 
         <h4 style="font-family: 'Courier';">Prénom</h4>
-        <input type="text" placeholder="Votre prénom">
+        <input type="text" id="prenomInscription" placeholder="Votre prénom">
 
         <h4 style="font-family: 'Courier';">Nom</h4>
-        <input type="text" placeholder="Votre nom">
+        <input type="text" id="nomInscription" placeholder="Votre nom">
 
         <h4 style="font-family: 'Courier';">Adresse courriel</h4>
-        <input type="email" placeholder="Votre adresse courriel">
+        <input type="email" id="AdresseInscription" placeholder="Votre adresse courriel">
 
         <h4 style="font-family: 'Courier';">Nom d'utilisateur</h4>
-        <input type="text" placeholder="Choisissez un nom d'utilisateur">
+        <input type="text" id="courrielInscription" placeholder="Choisissez un nom d'utilisateur">
 
         <h4 style="font-family: 'Courier';">Mot de passe</h4>
-        <input type="password" placeholder="Choisissez un mot de passe">
+        <input type="password" id="passwordInscription" placeholder="Choisissez un mot de passe">
         
         <h4 style="font-family: 'Courier';">Confirmer le mot de passe</h4>
-        <input type="password" placeholder="Confirmez votre mot de passe">
+        <input type="password" id="passInscription" placeholder="Confirmez votre mot de passe">
 
         <br><br>
 
         <div style="text-align: center;">
-            <button onclick="document.location='information.html'">Inscription</button>
+            <button type="button" id="boutonInscription">Inscription</button>
         </div>
 
         <br><br>
