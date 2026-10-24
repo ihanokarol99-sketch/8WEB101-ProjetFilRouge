@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/messsagerie.css">
 </head>
 
-<body> 
+<body style="visibility: hiddden;"> 
     <!-- BARRE DE NAVIGATION -->
 
     <div class="menu">
@@ -21,6 +21,11 @@
         <a href="membres.html">Membres</a>
 
         <a href="profil.html">Profil</a>
+
+        <button type="button" id="btnDeconnexion">
+            Deconnexion
+        </button>
+              
 
     </div>
     <!-- CONTENU PRINCIPAL -->
@@ -109,13 +114,20 @@
 
                 <input
                     type="text"
+                    id="messageInput"
                     placeholder="Écrire un message..."
                 >
 
-                <button>Envoyer</button>
+                <button id="btnEnvoyer" type="button">
+                    Envoyer
+                </button>
 
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/messagerie.js"></script>
+    <script src="../js/messages.js"></script>
 </body>
 </html>

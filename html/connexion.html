@@ -37,9 +37,10 @@
     <br><br>
 
         <div style="text-align: center;">
-            <button onclick="document.location='messagerie.html'">
+            <button type="button" id="btnConnexion">
             Connexion
             </button>
+            <p id="messageConnexion"></p>
         </div>
     <br>
         <div class="liens">
@@ -49,6 +50,9 @@
         <a href="inscription.html">Créer un compte</a>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/connexion.js"></script>
 </body>
 
 </html>

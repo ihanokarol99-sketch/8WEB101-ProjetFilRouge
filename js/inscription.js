@@ -54,18 +54,33 @@ try {
         }
     });
 
-    if (error) {
-        alert("Erreur d'inscription : " + error.message);
-        return;
-    }
+   if (error) {
+    console.error("Erreur Supabase :", error);
 
-    if (!data.session) {
-        alert("Vérifiez votre courriel pour confirmer votre compte.");
-        return;
-    }
+    alert(
+        "Impossible de terminer l'inscription : " +
+        error.message
+    );
+    return;
+}
 
-    alert("Compte créé avec succès !");
-    window.location.href = "information.html";
+if (!data.user) {
+    alert("La création du compte n'a pas pu être confirmée.");
+    return;
+}
+
+if (!data.session) {
+    alert(
+        "Inscription réussie ! Vérifiez votre courriel " +
+        "pour confirmer votre compte avant de vous connecter."
+    );
+
+    window.location.href = "connexion.html";
+    return;
+}
+
+alert("Compte créé avec succès !");
+window.location.href = "information.html";
 
 } catch (erreur) {
     alert("Impossible de contacter Supabase. Vérifiez votre connexion.");
