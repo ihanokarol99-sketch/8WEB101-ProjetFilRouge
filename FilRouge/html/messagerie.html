@@ -22,6 +22,11 @@
 
         <a href="profil.html">Profil</a>
 
+        
+        <button type="button" id="btnDeconnexion">
+             Déconnexion
+        </button>
+
     </div>
     <!-- CONTENU PRINCIPAL -->
 
@@ -88,20 +93,8 @@
             </div>
             <!-- MESSAGES -->
 
-            <div class="messages">
-
-                <div class="message-recu">Salut !</div>
-
-                <div class="message-envoye">Salut !</div>
-
-                <div class="message-recu">Ça va ?</div>
-
-                <div class="message-envoye">Oui ça va bien, et toi ?</div>
-
-                <div class="message-recu">Tu prépares quoi pour la prochaine saison ?</div>
-
-                <div class="message-envoye">Je me prépare pour le gros gibier.</div>
-
+            <div class="messages" id="listeMessages">
+                 <p>Sélectionnez un destinataire pour afficher les messages.</p>
             </div>
             <!-- ÉCRIRE UN MESSAGE -->
 
@@ -125,10 +118,14 @@
 
             </div>
 
-                <button>Envoyer</button>
-
             </div>
         </div>
     </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../js/supabaseClient.js"></script>
+<script src="../js/messagerie.js"></script>
+<script src="../js/messages.js"></script>
+
 </body>
 </html>
