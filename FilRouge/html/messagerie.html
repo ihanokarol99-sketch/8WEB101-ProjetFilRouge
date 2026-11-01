@@ -42,41 +42,10 @@
                 type="text"
                 placeholder="Rechercher une conversation"
             >
-            <!-- KAROL -->
+           
+            <!-- Liste des conversations chargées automatiquement -->
+            <div id="listeConversations"></div>
 
-            <div class="conversation conversation-active">
-
-                <strong>Karol Ihano</strong>
-
-                <span class="en-ligne">●</span>
-
-                <p>
-                    Ça va ?
-                </p>
-
-            </div>
-            <!-- MATHIAS -->
-
-            <div class="conversation">
-
-                <strong>Mathias SOKPO</strong>
-
-                <span class="en-ligne">●</span>
-
-                <p>Bonjour !</p>
-
-            </div>
-            <!-- ALEX -->
-
-            <div class="conversation">
-
-                <strong>Alex Tremblay
-                </strong>
-
-                <span class="en-ligne">●</span>
-
-                <p>Super !</p>
-            </div>
 
         </div>
         <!-- DISCUSSION -->
@@ -86,7 +55,7 @@
 
             <div class="entete-discussion">
 
-                <h2>Karol Ihano</h2>
+                <h2 id="nomDestinataire">Selectionnez une conversation</h2>
 
                 <span class="en-ligne">● En ligne</span>
 
@@ -101,9 +70,8 @@
             <div class="zone-message">
 
                 <input
-                    type="text"
+                    type="hidden"
                     id="receiverId"
-                    placeholder="Identifiant du destinataire"
                 >
 
                 <input

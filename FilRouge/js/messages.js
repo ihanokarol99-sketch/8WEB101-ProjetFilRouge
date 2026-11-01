@@ -102,6 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
         bouton.disabled = true;
 
         try {
+            console.log("Expéditeur :", utilisateurId);
+            console.log("Destinataire :", receiverId);
+
+            const { data: authData } = await client.auth.getUser();
+            console.log("Utilisateur connecté :", authData.user?.id);
+            
             const { error } = await client
                 .from("messages")
                 .insert({
@@ -111,10 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
             if (error) {
-                console.error("Erreur d'envoi :", error);
-                alert("Impossible d'envoyer le message.");
+                console.error("Erreur Supabase complète :", error);
+                alert("Erreur : " + error.message);
                 return;
-            }
+}
 
             champ.value = "";
             await chargerMessages();
@@ -131,8 +137,103 @@ document.addEventListener("DOMContentLoaded", function () {
 
     (async function () {
         if (await verifierUtilisateur()) {
+            await chargerMembres();
             await chargerMessages();
+
+            activerRealtime();
         }
     })();
+
+    async function chargerMembres() {
+    const { data, error } = await client
+        .from("Profiles")
+        .select("id, nom")
+        .neq("id", utilisateurId)
+        .order("nom");
+
+    if (error) {
+        console.error("Erreur membres :", error.message);
+        return;
+    }
+
+    console.log("Membres récupérés :", data);
+
+    const zone = document.getElementById("listeConversations");
+
+if (!zone) {
+    console.error("Zone des conversations introuvable.");
+    return;
+}
+
+zone.replaceChildren();
+
+data.forEach(membre => {
+    const conversation = document.createElement("div");
+
+    conversation.className = "conversation";
+    conversation.dataset.userId = membre.id;
+    conversation.textContent = membre.nom || "Utilisateur";
+
+    zone.appendChild(conversation);
+});
+}
+
+let canalMessages = null;
+
+function activerRealtime() {
+    canalMessages = client
+        .channel("messages-gohunt")
+        .on(
+            "postgres_changes",
+            {
+                event: "INSERT",
+                schema: "public",
+                table: "messages"
+            },
+            async (payload) => {
+                console.log("Nouveau message reçu :", payload);
+
+                await chargerMessages();
+            }
+        )
+        .subscribe((status) => {
+            console.log("Realtime :", status);
+        });
+}
+
+    const zoneConversations =
+    document.getElementById("listeConversations");
+
+zoneConversations.addEventListener("click", async function (event) {
+
+    const conversation = event.target.closest(".conversation");
+
+    if (!conversation || !zoneConversations.contains(conversation)) {
+        return;
+    }
+
+    const userId = conversation.dataset.userId;
+
+    if (!userId) {
+        return;
+    }
+
+    // Sélectionner le destinataire
+    destinataire.value = userId;
+    console.log("Destinataire selectionne :", destinataire.value);
+
+    // Afficher son nom
+    document.getElementById("nomDestinataire").textContent =
+        conversation.textContent;
+
+    // Mettre en évidence la conversation active
+    zoneConversations.querySelectorAll(".conversation")
+        .forEach(c => c.classList.remove("conversation-active"));
+
+    conversation.classList.add("conversation-active");
+
+    // Charger les messages
+    await chargerMessages();
+    });
 });
 

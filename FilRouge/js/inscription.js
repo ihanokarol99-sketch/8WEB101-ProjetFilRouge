@@ -90,15 +90,6 @@ window.location.href = "information.html";
     bouton.disabled = false;
 }
 
-
-
-
-        // Validation réussie
-        //alert("Informations validées !");
-
-        // Redirection vers la page suivante
-        //window.location.href = "information.html";
-
     });
 
 });

@@ -82,6 +82,11 @@ border-radius: 10px;
     border: 1px solid gray;
     margin-left: 10px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    min-height: 0;
+    overflow: hidden;
     }
 
     /* ENTÊTE DE LA DISCUSSION */
@@ -99,7 +104,9 @@ border-radius: 10px;
 
 .messages {
     padding: 20px;
-    height: 400px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
     }
 
 .message-recu {
@@ -125,6 +132,10 @@ border-radius: 10px;
     padding: 15px;
     border-top: 1px solid lightgray;
     text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
     }
 
 .zone-message input {
@@ -171,4 +182,9 @@ border-radius: 10px;
 
 .conversation-active{
     background-color: #b8dce8;
+}
+
+.zone-message #messageInput {
+    flex: 1;
+    min-width: 0;
 }
