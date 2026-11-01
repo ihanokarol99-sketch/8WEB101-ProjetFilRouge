@@ -159,3 +159,16 @@ border-radius: 10px;
     width: fit-content;
     overflow-wrap: anywhere;
 }    
+
+
+.conversation{
+    cursor: pointer;
+}
+
+.conversation:hover{
+    background-color: #e5f3f8;
+}
+
+.conversation-active{
+    background-color: #b8dce8;
+}

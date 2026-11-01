@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
     async function chargerMessages() {
         const receiverId = destinataire.value.trim();
 
+        console.log("Mon identifiant :", utilisateurId);
+        console.log("Identifiant du destinataire :", receiverId);
+
         if (!receiverId || !utilisateurId) {
             liste.textContent = "Sélectionnez un destinataire.";
             return;

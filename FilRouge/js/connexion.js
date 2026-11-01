@@ -2,11 +2,12 @@ const bouton = document.getElementById("btnConnexion");
 const message = document.getElementById("messageConnexion");
 
 bouton.addEventListener("click", async () => {
+    console.log("Bouton connexion clique");
 
     const email = document.getElementById("identifiant")
         .value.trim();
 
-    const motDePasse = document.getElementById("mot de passe")
+    const motDePasse = document.getElementById("motDePasseConnexion")
         .value;
 
     if (!email || !motDePasse) {
@@ -30,6 +31,9 @@ bouton.addEventListener("click", async () => {
             console.error(error);
             return;
         }
+        console.log("Utilisateur connecte :", data.user);
+        console.log("Session creee :", !!data.session);
+
 
         message.textContent = "Connexion réussie !";
 

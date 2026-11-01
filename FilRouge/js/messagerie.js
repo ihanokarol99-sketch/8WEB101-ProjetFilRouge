@@ -4,6 +4,9 @@ async function verifierConnexion() {
     const { data, error } =
         await window.supabaseClient.auth.getUser();
 
+        console.log("Erreur Supabase :", error);
+        console.log("Utilisateur Supabase :", data?.user);
+
     if (error || !data.user) {
         window.location.replace("connexion.html");
         return false;
@@ -45,3 +48,29 @@ async function deconnexion() {
 // Bouton de déconnexion
 document.getElementById("btnDeconnexion")
     .addEventListener("click", deconnexion);
+
+// Sélectionner les conversations
+document.querySelectorAll(".conversation").forEach(function(conversation) {
+
+    conversation.addEventListener("click", function() {
+
+        // Retirer l'ancienne sélection
+        document.querySelectorAll(".conversation").forEach(function(c) {
+            c.classList.remove("conversation-active");
+        });
+
+        // Activer la conversation choisie
+        conversation.classList.add("conversation-active");
+
+        // Récupérer le nom
+        const nom = conversation.querySelector("strong").textContent;
+
+        // Afficher le nom dans la discussion
+        document.querySelector(".entete-discussion h2").textContent = nom;
+
+        // Afficher un message temporaire
+        document.getElementById("listeMessages").textContent =
+            "Conversation sélectionnée : " + nom;
+    });
+
+});
