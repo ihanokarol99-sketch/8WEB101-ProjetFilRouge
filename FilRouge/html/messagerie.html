@@ -11,21 +11,14 @@
     <!-- BARRE DE NAVIGATION -->
 
     <div class="menu">
-
         <h1 class="logo">GOHUNT</h1>
-
         <a href="accueil.html">Accueil</a>
-
         <a href="messagerie.html">Messagerie</a>
-
         <a href="membres.html">Membres</a>
-
         <a href="profil.html">Profil</a>
-
         
-        <button type="button" id="btnDeconnexion">
-             Déconnexion
-        </button>
+        <button type="button" id="btnDeconnexion" class="btn-deconnexion">
+            Déconnexion</button>
 
     </div>
     <!-- CONTENU PRINCIPAL -->
@@ -34,18 +27,15 @@
         <!-- LISTE DES CONVERSATIONS -->
 
         <div class="conversations">
-
             <h2>Conversations</h2>
 
             <input
                 class="recherche"
                 type="text"
-                placeholder="Rechercher une conversation"
-            >
+                placeholder="Rechercher une conversation">
            
             <!-- Liste des conversations chargées automatiquement -->
             <div id="listeConversations"></div>
-
 
         </div>
         <!-- DISCUSSION -->
@@ -56,6 +46,9 @@
             <div class="entete-discussion">
 
                 <h2 id="nomDestinataire">Selectionnez une conversation</h2>
+
+                <button id="btnVoirProfil" class="btn-voir-profil" hidden>
+                    Voir le profil</button>
 
                 <span class="en-ligne">● En ligne</span>
 
@@ -69,23 +62,13 @@
 
             <div class="zone-message">
 
-                <input
-                    type="hidden"
-                    id="receiverId"
-                >
-
-                <input
-                    type="text"
-                    id="messageInput"
-                    placeholder="Écrire un message..."
-                >
+                <input type="hidden" id="receiverId"> 
+                <input type="text" id="messageInput" placeholder="Écrire un message...">
 
                 <button id="btnEnvoyer" type="button">
-                    Envoyer
-                </button>
+                    Envoyer </button>
 
             </div>
-
             </div>
         </div>
     </div>

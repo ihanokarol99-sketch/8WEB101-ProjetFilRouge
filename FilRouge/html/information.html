@@ -12,11 +12,8 @@
 <body>
 
     <div class="conteneur">
-
         <h1>GOHUNT</h1>
-
         <h2>Parlez-nous un peu de vous !</h2>
-
 
         <!-- QUESTION 1 -->
 
@@ -29,9 +26,7 @@
             id="anneesExperience"
             min="0"
             placeholder="Nombre d'années"
-            required
-        >
-
+            required>
 
         <!-- QUESTION 2 -->
 
@@ -57,7 +52,6 @@
 
         </select>
 
-
         <!-- QUESTION 3 -->
 
         <h4 style="font-family: 'Courier';">
@@ -69,10 +63,15 @@
             id="nombreGibiers"
             min="0"
             placeholder="Exemple : 12"
-            required
-        >
+            required>
 
+            <div id="evaluationChasseur">
+            <p>Votre niveau de chasseur :</p>
 
+            <span id="etoilesChasseur">☆☆☆☆☆</span>
+            <p id="noteChasseur">0/5 étoiles</p>
+            </div>
+        
         <!-- QUESTION 4 -->
 
         <h4 style="font-family: 'Courier';">
@@ -100,25 +99,22 @@
             </option>
 
         </select>
-
-
         <br><br>
-
 
         <!-- BOUTON CONTINUER -->
 
         <div style="text-align: center;">
 
-            <button
-                type="button"
-                id="btnContinuer"
-                onclick="document.location='connexion.html'">
+            <button type="button" id="btnContinuer">
                 Continuer
             </button>
-
         </div>
-
     </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabaseClient.js"></script>
+<script src="../js/evaluation.js"></script>
+<script src="../js/information.js"></script>
 
 </body>
 

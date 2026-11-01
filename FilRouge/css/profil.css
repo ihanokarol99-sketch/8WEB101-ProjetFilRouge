@@ -1,0 +1,35 @@
+
+.carte-profil {
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 15px;
+    text-align: center;
+    color: #243524;
+}
+
+.carte-profil h1 {
+    color: #245b35;
+}
+
+#etoilesProfil {
+    color: #e5a500;
+    font-size: 36px;
+    letter-spacing: 4px;
+}
+
+#noteProfil {
+    font-weight: bold;
+}
+
+.carte-profil p {
+    margin: 14px 0;
+}
+
+.carte-profil a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #245b35;
+    font-weight: bold;
+}

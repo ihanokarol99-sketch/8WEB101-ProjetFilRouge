@@ -60,17 +60,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         data.forEach(function (message) {
-            const element = document.createElement("div");
+    const element = document.createElement("div");
 
-            const envoye = message.sender_id === utilisateurId;
+    element.className =
+        message.sender_id === utilisateurId
+            ? "message-envoye"
+            : "message-recu";
 
-            element.className = envoye
-                ? "message-envoye"
-                : "message-recu";
+    const texte = document.createElement("div");
+    texte.textContent = message.content;
 
-            element.textContent = message.content;
-            liste.appendChild(element);
-        });
+    const heure = document.createElement("small");
+    heure.className = "heure-message";
+
+    heure.textContent = new Date(
+        message.created_at
+    ).toLocaleTimeString("fr-CA", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    element.appendChild(texte);
+    element.appendChild(heure);
+    liste.appendChild(element);
+    });
 
         liste.scrollTop = liste.scrollHeight;
     }
@@ -89,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (!utilisateurId && !(await verifierUtilisateur())) {
+        if (!(await verifierUtilisateur())) {
             alert("Vous devez être connecté.");
             return;
         }
@@ -105,9 +118,12 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Expéditeur :", utilisateurId);
             console.log("Destinataire :", receiverId);
 
-            const { data: authData } = await client.auth.getUser();
-            console.log("Utilisateur connecté :", authData.user?.id);
-            
+            const { data: { user } } = await client.auth.getUser();
+
+            console.log("Utilisateur authentifié :", user?.id);
+            console.log("Expéditeur :", utilisateurId);
+            console.log("Destinataire :", receiverId);
+
             const { error } = await client
                 .from("messages")
                 .insert({
@@ -216,6 +232,13 @@ zoneConversations.addEventListener("click", async function (event) {
 
     if (!userId) {
         return;
+    }
+
+    // Afficher le bouton Voir le profil
+    const boutonProfil = document.getElementById("btnVoirProfil");
+
+    if (boutonProfil) {
+    boutonProfil.style.display = "inline-block";
     }
 
     // Sélectionner le destinataire

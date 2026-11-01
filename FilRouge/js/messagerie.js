@@ -61,6 +61,7 @@ document.querySelectorAll(".conversation").forEach(function(conversation) {
 
         // Activer la conversation choisie
         conversation.classList.add("conversation-active");
+        document.getElementById("btnVoirProfil").hidden = false;
 
         // Récupérer le nom
         const nom = conversation.querySelector("strong").textContent;
@@ -74,3 +75,19 @@ document.querySelectorAll(".conversation").forEach(function(conversation) {
     });
 
 });
+
+// Ouvrir le profil du chasseur sélectionné
+document.getElementById("btnVoirProfil")
+    .addEventListener("click", function () {
+
+        const idDestinataire =
+            document.getElementById("receiverId").value.trim();
+
+        if (!idDestinataire) {
+            alert("Veuillez d'abord sélectionner une conversation.");
+            return;
+        }
+
+        window.location.href =
+            "profil.html?id=" + encodeURIComponent(idDestinataire);
+    });

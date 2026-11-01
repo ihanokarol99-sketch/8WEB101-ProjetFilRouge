@@ -188,3 +188,58 @@ border-radius: 10px;
     flex: 1;
     min-width: 0;
 }
+
+.heure-message {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Bouton Voir le profil */
+.btn-voir-profil {
+    background-color: #3f8054;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-voir-profil:hover {
+    background-color: #2d6340;
+    transform: translateY(-2px);
+}
+
+/* Bouton Déconnexion */
+.btn-deconnexion {
+    background-color: #b74747;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-deconnexion:hover {
+    background-color: #922e2e;
+    transform: translateY(-2px);
+}
+
+/* Accessibilité clavier */
+.btn-voir-profil:focus-visible,
+.btn-deconnexion:focus-visible {
+    outline: 3px solid #e5b95c;
+    outline-offset: 3px;
+}
+
+.btn-voir-profil[hidden] {
+    display: none;
+}
